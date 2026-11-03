@@ -3,7 +3,7 @@ from tkinter import messagebox
 
 
 class ParkingSpot:
-    """Represents a basic car parking spot."""
+   
 
     def __init__(self, spot_number, location, base_price):
         self.spot_number = spot_number
@@ -15,7 +15,7 @@ class ParkingSpot:
         return self.__base_price
 
     def set_base_price(self, new_price):
-        """Changes the base price if it is greater than zero."""
+        
         if new_price > 0:
             self.__base_price = new_price
             return True
@@ -23,19 +23,19 @@ class ParkingSpot:
             return False
 
     def calculate_price(self, hours):
-        """Calculates the total parking price."""
+        
         return self.get_base_price() * hours
 
 
 class PremiumParkingSpot(ParkingSpot):
-    """Represents a premium parking spot with an extra hourly fee."""
+
 
     def __init__(self, spot_number, location, base_price, extra_fee):
         super().__init__(spot_number, location, base_price)
         self.extra_fee = extra_fee
 
     def calculate_price(self, hours):
-        """Calculates parking price including the premium fee."""
+     
         return (self.get_base_price() + self.extra_fee) * hours
 
 
